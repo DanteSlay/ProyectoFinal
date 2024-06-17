@@ -6,6 +6,7 @@ import com.traffic.vintrack.repository.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
@@ -23,6 +24,7 @@ public class PaisServiceImpl extends CrudServiceImpl<Pais, Long> implements Pais
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Pais findByNombre(String nombrePais) {
         return repository.findByNombre(nombrePais);
     }

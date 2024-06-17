@@ -8,6 +8,7 @@ import com.traffic.vintrack.repository.CompraBodegaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
@@ -31,6 +32,7 @@ public class CompraBodegaServiceImpl extends CrudServiceImpl<CompraBodega, Long>
     }
 
     @Override
+    @Transactional
     public CompraBodega save(CompraBodega compraBodega) {
         compraBodega.getDetalles().forEach(detalle -> detalle.setCompraBodega(compraBodega));
 
@@ -51,6 +53,7 @@ public class CompraBodegaServiceImpl extends CrudServiceImpl<CompraBodega, Long>
                 .mapToDouble(detalle -> detalle.getCantidad() * detalle.getPrecio_unitario())
                 .sum();
     }
+
 
     private void añadirCantidadVino(final Set<CompraDetalle> detalles){
         detalles.forEach(detalle -> {
