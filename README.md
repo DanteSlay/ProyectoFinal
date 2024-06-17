@@ -11,9 +11,9 @@ Para comenzar a trabajar con el proyecto, sigue estos pasos detallados a continu
    ```
 
 2. Cambia al directorio del proyecto:
-  ```bash
+   ```bash
    cd ProyectoFinal
-```
+   ```
 
 3. Construir y Desplegar el Proyecto con Docker
   Una vez clonado el repositorio, procede con la construcción y despliegue del proyecto utilizando Docker:
@@ -26,7 +26,7 @@ Para comenzar a trabajar con el proyecto, sigue estos pasos detallados a continu
     ```
    Despliega el proyecto utilizando Docker Compose:
    ```bash
-      docker-compose up
+   docker-compose up
     ```
 
    Una vez completados estos pasos, el proyecto estará desplegado y podrás acceder al backend a través de
