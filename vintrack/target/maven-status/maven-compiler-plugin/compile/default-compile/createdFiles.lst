@@ -32,6 +32,7 @@ com\traffic\vintrack\model\dto\VinoCardDTO$Builder.class
 com\traffic\vintrack\repository\EmpleadoRepository.class
 com\traffic\vintrack\service\VentaService.class
 com\traffic\vintrack\model\mapper\ClienteMapper.class
+com\traffic\vintrack\model\dto\VinoSearchDTO.class
 com\traffic\vintrack\model\entity\Crianza$Builder.class
 com\traffic\vintrack\controller\RolController.class
 com\traffic\vintrack\model\entity\Tipo.class
