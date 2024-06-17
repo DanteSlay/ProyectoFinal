@@ -1,20 +1,17 @@
 package com.traffic.vintrack.service;
 
 
-import com.traffic.vintrack.base.service.CrudServiceImpl;
+import com.traffic.vintrack.base.service.CrudAndPageServiceImpl;
 import com.traffic.vintrack.exception.CantidadExcesiva;
-import com.traffic.vintrack.model.dto.VinoCardDTO;
 import com.traffic.vintrack.model.entity.Vino;
 import com.traffic.vintrack.model.mapper.VinoMapper;
 import com.traffic.vintrack.repository.VinoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class VinoServiceImpl extends CrudServiceImpl<Vino, Long> implements VinoService {
+public class VinoServiceImpl extends CrudAndPageServiceImpl<Vino, Long> implements VinoService {
 
     private final VinoRepository vinoRepository;
     private final VinoMapper mapper;
@@ -23,11 +20,6 @@ public class VinoServiceImpl extends CrudServiceImpl<Vino, Long> implements Vino
     public VinoServiceImpl(VinoRepository vinoRepository, VinoMapper mapper) {
         this.vinoRepository = vinoRepository;
         this.mapper = mapper;
-    }
-
-    @Override
-    public Page<VinoCardDTO> findAll(Pageable pageable) {
-        return vinoRepository.findAll(pageable).map(entity -> mapper.toDTO(entity).toCardDTO());
     }
 
     @Override
