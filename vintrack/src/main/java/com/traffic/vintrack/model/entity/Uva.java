@@ -18,6 +18,11 @@ public class Uva {
     public Uva() {
     }
 
+    public Uva(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public Long getId() {
         return id;
     }

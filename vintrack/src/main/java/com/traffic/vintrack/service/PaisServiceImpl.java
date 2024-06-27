@@ -26,6 +26,6 @@ public class PaisServiceImpl extends CrudServiceImpl<Pais, Long> implements Pais
     @Override
     @Transactional(readOnly = true)
     public Pais findByNombre(String nombrePais) {
-        return repository.findByNombre(nombrePais);
+        return repository.findByNombre(nombrePais.toUpperCase());
     }
 }
