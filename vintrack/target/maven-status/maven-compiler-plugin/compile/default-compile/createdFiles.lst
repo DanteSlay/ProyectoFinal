@@ -32,10 +32,12 @@ com\traffic\vintrack\model\dto\VinoCardDTO$Builder.class
 com\traffic\vintrack\repository\EmpleadoRepository.class
 com\traffic\vintrack\service\VentaService.class
 com\traffic\vintrack\model\mapper\ClienteMapper.class
+com\traffic\vintrack\model\dto\VinoSearchDTO.class
 com\traffic\vintrack\model\entity\Crianza$Builder.class
 com\traffic\vintrack\controller\RolController.class
 com\traffic\vintrack\model\entity\Tipo.class
 com\traffic\vintrack\model\dto\EmpleadoDTO$Builder.class
+com\traffic\vintrack\base\service\CrudAndPageServiceImpl.class
 com\traffic\vintrack\model\mapper\BodegaMapper.class
 com\traffic\vintrack\repository\UvaRepository.class
 com\traffic\vintrack\model\dto\ClienteDTO$Builder.class
@@ -47,6 +49,7 @@ com\traffic\vintrack\controller\VinoController.class
 com\traffic\vintrack\service\RolServiceImpl.class
 com\traffic\vintrack\service\BodegaService.class
 com\traffic\vintrack\model\dto\UvaDTO.class
+com\traffic\vintrack\base\service\PageService.class
 com\traffic\vintrack\service\CrianzaServiceImpl.class
 com\traffic\vintrack\model\entity\Empleado.class
 com\traffic\vintrack\service\CompraBodegaServiceImpl.class
