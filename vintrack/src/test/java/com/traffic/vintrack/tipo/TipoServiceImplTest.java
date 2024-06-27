@@ -7,35 +7,28 @@ import static org.mockito.Mockito.*;
 import com.traffic.vintrack.model.entity.Tipo;
 import com.traffic.vintrack.repository.TipoRepository;
 import com.traffic.vintrack.service.TipoServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+@ExtendWith(MockitoExtension.class)
 public class TipoServiceImplTest {
 
     @Mock
-    private TipoRepository tipoRepositoryMock;
+    private TipoRepository tipoRepository;
 
     @InjectMocks
     private TipoServiceImpl tipoService;
 
-    @BeforeEach
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
-
     @Test
     public void testFindByNombre() {
         // Datos de prueba
-        String nombre = "Tipo1";
-        Tipo tipoMock = new Tipo();
-        tipoMock.setId(1L);
-        tipoMock.setNombre(nombre);
+        String nombre = "TINTO";
 
         // Configuración del mock
-        when(tipoRepositoryMock.findByNombre(nombre)).thenReturn(tipoMock);
+        when(tipoRepository.findByNombre(nombre)).thenReturn(TiposEjemplos.tipo1);
 
         // Llamada al método del servicio
         Tipo resultado = tipoService.findByNombre(nombre);
@@ -46,9 +39,24 @@ public class TipoServiceImplTest {
         assertEquals(1L, resultado.getId());
 
         // Verificar que el método del repositorio se llama una vez con el parámetro correcto
-        verify(tipoRepositoryMock, times(1)).findByNombre(nombre);
+        verify(tipoRepository, times(1)).findByNombre(nombre);
     }
 
-    // Puedes agregar más pruebas aquí según sea necesario
+    @Test
+    public void testSave() {
+        Tipo entityBeforeSave = TiposEjemplos.tipoDTO1;
+
+        when(tipoRepository.save(entityBeforeSave)).thenReturn(TiposEjemplos.tipo1);
+
+        Tipo entitySaved = tipoService.save(entityBeforeSave);
+
+        assertNull(entityBeforeSave.getId());
+        assertNotNull(entitySaved.getId());
+        assertNotEquals(entitySaved, entityBeforeSave);
+
+        verify(tipoRepository).save(entityBeforeSave);
+    }
+
+
 
 }

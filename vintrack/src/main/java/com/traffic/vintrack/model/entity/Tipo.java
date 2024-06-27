@@ -13,6 +13,11 @@ public class Tipo {
 
     public Tipo() {}
 
+    public Tipo(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public Long getId() {
         return this.id;
     }
