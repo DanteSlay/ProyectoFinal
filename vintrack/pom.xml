@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.traffic</groupId>
 	<artifactId>vintrack</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.0-RELEASE</version>
 	<name>vintrack</name>
 	<description>Backend que provee endpoints para gestionar ventas/compras y búsquedas en la BBDD.</description>
 	<properties>
